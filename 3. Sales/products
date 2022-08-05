@@ -1,0 +1,78 @@
+ProductID,ProductName,SupplierID,CategoryID,Unit,Price
+1,Chais,1,1,10 boxes x 20 bags,18.0
+2,Chang,1,1,24 - 12 oz bottles,19.0
+3,Aniseed Syrup,1,2,12 - 550 ml bottles,10.0
+4,Chef Anton's Cajun Seasoning,2,2,48 - 6 oz jars,22.0
+5,Chef Anton's Gumbo Mix,2,2,36 boxes,21.0
+6,Grandma's Boysenberry Spread,3,2,12 - 8 oz jars,25.0
+7,Uncle Bob's Organic Dried Pears,3,7,12 - 1 lb pkgs.,30.0
+8,Northwoods Cranberry Sauce,3,2,12 - 12 oz jars,40.0
+9,Mishi Kobe Niku,4,6,18 - 500 g pkgs.,97.0
+10,Ikura,4,8,12 - 200 ml jars,31.0
+11,Queso Cabrales,5,4,1 kg pkg.,21.0
+12,Queso Manchego La Pastora,5,4,10 - 500 g pkgs.,38.0
+13,Konbu,6,8,2 kg box,6.0
+14,Tofu,6,7,40 - 100 g pkgs.,23.0
+15,Genen Shouyu,6,2,24 - 250 ml bottles,16.0
+16,Pavlova,7,3,32 - 500 g boxes,17.0
+17,Alice Mutton,7,6,20 - 1 kg tins,39.0
+18,Carnarvon Tigers,7,8,16 kg pkg.,63.0
+19,Teatime Chocolate Biscuits,8,3,10 boxes x 12 pieces,9.0
+20,Sir Rodney's Marmalade,8,3,30 gift boxes,81.0
+21,Sir Rodney's Scones,8,3,24 pkgs. x 4 pieces,10.0
+22,Gustaf's Kn?ckebr?d,9,5,24 - 500 g pkgs.,21.0
+23,Tunnbr?d,9,5,12 - 250 g pkgs.,9.0
+24,Guaran? Fant?stica,10,1,12 - 355 ml cans,5.0
+25,NuNuCa Nu?-Nougat-Creme,11,3,20 - 450 g glasses,14.0
+26,Gumb?r Gummib?rchen,11,3,100 - 250 g bags,31.0
+27,Schoggi Schokolade,11,3,100 - 100 g pieces,44.0
+28,R?ssle Sauerkraut,12,7,25 - 825 g cans,46.0
+29,Th?ringer Rostbratwurst,12,6,50 bags x 30 sausgs.,124.0
+30,Nord-Ost Matjeshering,13,8,10 - 200 g glasses,26.0
+31,Gorgonzola Telino,14,4,12 - 100 g pkgs,13.0
+32,Mascarpone Fabioli,14,4,24 - 200 g pkgs.,32.0
+33,Geitost,15,4,500 g,3.0
+34,Sasquatch Ale,16,1,24 - 12 oz bottles,14.0
+35,Steeleye Stout,16,1,24 - 12 oz bottles,18.0
+36,Inlagd Sill,17,8,24 - 250 g jars,19.0
+37,Gravad lax,17,8,12 - 500 g pkgs.,26.0
+38,C?te de Blaye,18,1,12 - 75 cl bottles,264.0
+39,Chartreuse verte,18,1,750 cc per bottle,18.0
+40,Boston Crab Meat,19,8,24 - 4 oz tins,18.0
+41,Jack's New England Clam Chowder,19,8,12 - 12 oz cans,10.0
+42,Singaporean Hokkien Fried Mee,20,5,32 - 1 kg pkgs.,14.0
+43,Ipoh Coffee,20,1,16 - 500 g tins,46.0
+44,Gula Malacca,20,2,20 - 2 kg bags,19.0
+45,R?gede sild,21,8,1k pkg.,10.0
+46,Spegesild,21,8,4 - 450 g glasses,12.0
+47,Zaanse koeken,22,3,10 - 4 oz boxes,10.0
+48,Chocolade,22,3,10 pkgs.,13.0
+49,Maxilaku,23,3,24 - 50 g pkgs.,20.0
+50,Valkoinen suklaa,23,3,12 - 100 g bars,16.0
+51,Manjimup Dried Apples,24,7,50 - 300 g pkgs.,53.0
+52,Filo Mix,24,5,16 - 2 kg boxes,7.0
+53,Perth Pasties,24,6,48 pieces,33.0
+54,Tourti?re,25,6,16 pies,7.0
+55,P?t? chinois,25,6,24 boxes x 2 pies,24.0
+56,Gnocchi di nonna Alice,26,5,24 - 250 g pkgs.,38.0
+57,Ravioli Angelo,26,5,24 - 250 g pkgs.,20.0
+58,Escargots de Bourgogne,27,8,24 pieces,13.0
+59,Raclette Courdavault,28,4,5 kg pkg.,55.0
+60,Camembert Pierrot,28,4,15 - 300 g rounds,34.0
+61,Sirop d'?rable,29,2,24 - 500 ml bottles,29.0
+62,Tarte au sucre,29,3,48 pies,49.0
+63,Vegie-spread,7,2,15 - 625 g jars,44.0
+64,Wimmers gute Semmelkn?del,12,5,20 bags x 4 pieces,33.0
+65,Louisiana Fiery Hot Pepper Sauce,2,2,32 - 8 oz bottles,21.0
+66,Louisiana Hot Spiced Okra,2,2,24 - 8 oz jars,17.0
+67,Laughing Lumberjack Lager,16,1,24 - 12 oz bottles,14.0
+68,Scottish Longbreads,8,3,10 boxes x 8 pieces,13.0
+69,Gudbrandsdalsost,15,4,10 kg pkg.,36.0
+70,Outback Lager,7,1,24 - 355 ml bottles,15.0
+71,Fl?temysost,15,4,10 - 500 g pkgs.,22.0
+72,Mozzarella di Giovanni,14,4,24 - 200 g pkgs.,35.0
+73,R?d Kaviar,17,8,24 - 150 g jars,15.0
+74,Longlife Tofu,4,7,5 kg pkg.,10.0
+75,Rh?nbr?u Klosterbier,12,1,24 - 0.5 l bottles,8.0
+76,Lakkalik??ri,23,1,500 ml,18.0
+77,Original Frankfurter gr?ne So?e,12,2,12 boxes,13.0

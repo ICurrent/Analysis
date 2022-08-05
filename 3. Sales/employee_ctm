@@ -1,0 +1,197 @@
+EmployeeID,fullname,Customers,COUNT(ord.CustomerID)
+1,Nancy Davolio,"QUICK-Stop
+Rattlesnake Canyon Grocery
+La maison d'Asie
+Sant? Gourmet
+Du monde entier
+Magazzini Alimentari Riuniti
+Tortuga Restaurante
+Hungry Coyote Import Store
+Save-a-lot Markets
+Rattlesnake Canyon Grocery
+LILA-Supermercado
+QUICK-Stop
+Eastern Connection
+Tortuga Restaurante
+Tradi??o Hipermercados
+Ernst Handel
+Romero y tomillo
+Split Rail Beer & Ale
+Ernst Handel
+K?niglich Essen
+LINO-Delicateses
+Rattlesnake Canyon Grocery
+Eastern Connection
+Seven Seas Imports
+Bon app'
+M?re Paillarde
+Wartian Herkku
+Frankenversand
+Wolski",29
+2,Andrew Fuller,"Save-a-lot Markets
+QUICK-Stop
+Vins et alcools Chevalier
+Ottilies K?seladen
+Piccolo und mehr
+Magazzini Alimentari Riuniti
+Folk och f? HB
+Magazzini Alimentari Riuniti
+M?re Paillarde
+Lonesome Pine Restaurant
+Familia Arquibaldo
+Die Wandernde Kuh
+QUICK-Stop
+Franchi S.p.A.
+Morgenstern Gesundkost
+Ernst Handel
+Que Del?cia
+Berglunds snabbk?p
+Seven Seas Imports
+Blondel p?re et fils",20
+3,Janet Leverling,"Hungry Coyote Import Store
+Oc?ano Atl?ntico Ltda.
+Rattlesnake Canyon Grocery
+Toms Spezialit?ten
+Berglunds snabbk?p
+Island Trading
+Wellington Importadora
+Ernst Handel
+Victuailles en stock
+LILA-Supermercado
+Bottom-Dollar Marketse
+M?re Paillarde
+Hanari Carnes
+LILA-Supermercado
+LILA-Supermercado
+Old World Delicatessen
+Wartian Herkku
+Blondel p?re et fils
+Furia Bacalhau e Frutos do Mar
+Bon app'
+Antonio Moreno Taquer?a
+Wellington Importadora
+Drachenblut Delikatessend
+Hungry Owl All-Night Grocers
+Hungry Coyote Import Store
+Split Rail Beer & Ale
+Hungry Owl All-Night Grocers
+QUICK-Stop
+Folk och f? HB
+Princesa Isabel Vinhoss
+La maison d'Asie",31
+4,Margaret Peacock,"Ernst Handel
+Richter Supermarkt
+Drachenblut Delikatessend
+Frankenversand
+Romero y tomillo
+Die Wandernde Kuh
+Hungry Owl All-Night Grocers
+White Clover Markets
+Bottom-Dollar Marketse
+Familia Arquibaldo
+Blondel p?re et fils
+Lehmanns Marktstand
+Hanari Carnes
+Reggiani Caseifici
+Galer?a del gastr?nomo
+Piccolo und mehr
+Lehmanns Marktstand
+Romero y tomillo
+Ernst Handel
+Bottom-Dollar Marketse
+Frankenversand
+Save-a-lot Markets
+Que Del?cia
+Old World Delicatessen
+Centro comercial Moctezuma
+HILARI?N-Abastos
+Supr?mes d?lices
+Rattlesnake Canyon Grocery
+Simons bistro
+Ricardo Adocicados
+Split Rail Beer & Ale
+Island Trading
+K?niglich Essen
+Supr?mes d?lices
+QUICK-Stop
+Ernst Handel
+B?lido Comidas preparadas
+Frankenversand
+Old World Delicatessen
+Furia Bacalhau e Frutos do Mar",40
+5,Steven Buchanan,"Princesa Isabel Vinhoss
+Blondel p?re et fils
+Wartian Herkku
+Chop-suey Chinese
+Folk och f? HB
+Queen Cozinha
+White Clover Markets
+Wartian Herkku
+Wilman Kala
+La maison d'Asie
+Seven Seas Imports",11
+6,Michael Suyama,"HILARI?N-Abastos
+Gourmet Lanchonetes
+M?re Paillarde
+La maison d'Asie
+Ernst Handel
+Die Wandernde Kuh
+Lonesome Pine Restaurant
+Hungry Owl All-Night Grocers
+Chop-suey Chinese
+LILA-Supermercado
+La maison d'Asie
+Que Del?cia
+Around the Horn
+Folk och f? HB
+Tradi??o Hipermercados
+Vins et alcools Chevalier
+Rattlesnake Canyon Grocery
+Split Rail Beer & Ale",18
+7,Robert King,"Tortuga Restaurante
+Ana Trujillo Emparedados y helados
+Godos Cocina T?pica
+B's Beverages
+Reggiani Caseifici
+M?re Paillarde
+Queen Cozinha
+Simons bistro
+Piccolo und mehr
+Split Rail Beer & Ale
+Princesa Isabel Vinhoss
+Vaffeljernet
+Pericles Comidas cl?sicas
+Hungry Owl All-Night Grocers",14
+8,Laura Callahan,"Consolidated Holdings
+Hungry Owl All-Night Grocers
+Ricardo Adocicados
+Rattlesnake Canyon Grocery
+QUICK-Stop
+Galer?a del gastr?nomo
+Lehmanns Marktstand
+Berglunds snabbk?p
+Tortuga Restaurante
+Wartian Herkku
+GROSELLA-Restaurante
+Split Rail Beer & Ale
+Reggiani Caseifici
+Pericles Comidas cl?sicas
+Com?rcio Mineiro
+Ernst Handel
+Folies gourmandes
+Island Trading
+Wartian Herkku
+The Big Cheese
+Old World Delicatessen
+Wartian Herkku
+Vaffeljernet
+Die Wandernde Kuh
+Around the Horn
+Que Del?cia
+Victuailles en stock",27
+9,Anne Dodsworth,"Save-a-lot Markets
+Richter Supermarkt
+Ernst Handel
+Familia Arquibaldo
+Bottom-Dollar Marketse
+Bon app'",6
