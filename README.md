@@ -1,2 +1,2 @@
 # Analysis
-Projects on data analysis using Pyrhon, SQL, PowerBI, R and Excel
+Projects on data analysis using Pyrhon, SQL, and R.
