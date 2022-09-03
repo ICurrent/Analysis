@@ -1,2 +1,2 @@
 # Analysis
-Projects on data analysis using numpy, pandas, matplotlib and seaborn
+Projects on data analysis using Pyrhon, SQL, PowerBI, R and Excel
