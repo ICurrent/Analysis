@@ -82,7 +82,7 @@ VALUES
   (1, 'Meatlovers'),
   (2, 'Vegetarian');
 
-
+*
 DROP TABLE IF EXISTS pizza_recipes;
 CREATE TABLE pizza_recipes (
   "pizza_id" INTEGER,
