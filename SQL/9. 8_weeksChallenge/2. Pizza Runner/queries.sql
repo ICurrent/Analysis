@@ -76,21 +76,59 @@ FROM new_ctm_orders GROUP BY 1;
                 --Part B
 -- B. Runner and Customer Experience
 --How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
-
+SELECT 
+SUM(CASE WHEN EXTRACT(DAY FROM registration_date) < 8 THEN 1 ELSE 0 END) Week1,
+SUM(CASE WHEN EXTRACT(DAY FROM registration_date) >= 8 AND EXTRACT(DAY FROM registration_date) <14 THEN 1 ELSE 0 END) Week2,
+SUM(CASE WHEN EXTRACT(DAY FROM registration_date) >= 14 AND EXTRACT(DAY FROM registration_date) <21 THEN 1 ELSE 0 END) Week3,
+SUM(CASE WHEN EXTRACT(DAY FROM registration_date) >= 21 THEN 1 ELSE 0 END) Week4
+FROM runners;
 
 --What was the average time in minutes it took for each runner to arrive at the Pizza Runner HQ to pickup the order?
+SELECT tab.runner_id, ROUND(AVG(tab.total_time_in_min), 2)
+FROM(
+    SELECT r.runner_id,
+	TIMESTAMPDIFF (hour, order_time,pickup_time ) * 60 +
+    TIMESTAMPDIFF (minute, order_time,pickup_time ) + 
+    TIMESTAMPDIFF (second , order_time,pickup_time ) / 60 as total_time_in_min
+    FROM new_ctm_orders c 
+    JOIN new_runners_ord r ON c.order_id = r.order_id
+    WHERE cancellation IS NULL) tab
+GROUP BY 1;
+
 
 
 --Is there any relationship between the number of pizzas and how long the order takes to prepare?
-
+SELECT c.order_id, COUNT(pizza_id) No_of_Pizza,
+TIMESTAMPDIFF (hour, order_time, pickup_time ) * 60 * 60 + 
+TIMESTAMPDIFF (minute, order_time, pickup_time ) * 60 + 
+TIMESTAMPDIFF (second , order_time, pickup_time ) total_time_in_sec
+FROM new_ctm_orders c  
+JOIN new_runners_ord r USING(order_id)
+WHERE cancellation IS NULL
+GROUP BY 1
+ORDER BY 2 asc;
 
 --What was the average distance travelled for each customer?
-
+SELECT customer_id , ROUND(AVG(distance),2) avg_dist_travelled
+FROM new_ctm_orders c
+JOIN new_runners_ord r USING(order_id)
+WHERE cancellation = ' '
+GROUP BY customer_id;
 
 --What was the difference between the longest and shortest delivery times for all orders?
-
+SELECT
+MAX(duration)- MIN(duration)  max_min_diff 
+FROM new_runners_ord
+WHERE cancellation = ' ';
 
 --What was the average speed for each runner for each delivery and do you notice any trend for these values?
-
+SELECT runner_id,order_id, ROUND(AVG(distance/duration),2)* 60*60 avg_speed_km_per_hr
+FROM new_runners_ord
+WHERE cancellation = ' '
+GROUP BY runner_id,order_id;
 
 --What is the successful delivery percentage for each runner?
+SELECT runner_id, 
+ROUND(SUM(CASE WHEN cancellation = ' ' THEN 1 ELSE 0 END)/COUNT(duration),2) * 100 'successful delivery'
+FROM new_runners_ord r
+GROUP BY 1;
