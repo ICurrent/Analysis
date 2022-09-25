@@ -73,8 +73,8 @@ SELECT WEEKDAY(order_time) AS day_of_week, COUNT(order_id) AS volume_of_pizzas
 FROM new_ctm_orders GROUP BY 1;
 
 
-                --Part B
--- B. Runner and Customer Experience
+                -Part B
+--- B. Runner and Customer Experience
 --How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
 SELECT 
 SUM(CASE WHEN EXTRACT(DAY FROM registration_date) < 8 THEN 1 ELSE 0 END) Week1,
