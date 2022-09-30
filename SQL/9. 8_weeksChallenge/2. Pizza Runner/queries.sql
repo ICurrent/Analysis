@@ -132,3 +132,116 @@ SELECT runner_id,
 ROUND(SUM(CASE WHEN cancellation = ' ' THEN 1 ELSE 0 END)/COUNT(duration),2) * 100 'successful delivery'
 FROM new_runners_ord r
 GROUP BY 1;
+
+--                      Pricing and Ratings
+
+-- If a Meat Lovers pizza costs $12 and Vegetarian 
+-- costs $10 and there were no charges for 
+-- changes - how much money has Pizza Runner
+--made so far if there are no delivery fees?
+
+
+
+
+-- What if there was an additional $1 charge for any pizza extras?
+--Add cheese is $1 extra
+-- What if there was an additional $1 charge for any pizza extras?
+--Add cheese is $1 extra
+
+
+
+-- What if substitutes were allowed at no 
+--additional cost but any additional extras
+--were charged at $1?
+-- Exclude Cheese and add Bacon is free
+-- Exclude Cheese but add bacon and beef 
+--costs $1 extra
+
+--                      Ingredient Optimisation
+--1) What are the standard ingredients for each pizza?
+WITH split_toppings_by_id AS
+(
+    SELECT DISTINCT substring_index(substring_index(a.TOPPINGS,',',b.help_topic_id+1),',',-1) topping_id, a.pizza_id 
+    FROM pizza_recipes a
+    JOIN mysql.help_topic b ON b.help_topic_id < (length(a.TOPPINGS) - length(replace(a.TOPPINGS,',',''))+1))
+
+SELECT pn.pizza_id,pn.pizza_name , GROUP_CONCAT(pt.topping_name SEPARATOR '\n')
+FROM pizza_names pn 
+JOIN split_toppings_by_id pr ON pn.pizza_id = pr.pizza_id
+JOIN pizza_toppings pt ON pr.topping_id = pt.topping_id
+GROUP BY 1
+ORDER BY 1 ;
+
+--2) What was the most commonly added extra?
+WITH cte
+AS(
+    SELECT SUBSTRING_INDEX(extras, ',', 1) topping_id
+	FROM new_ctm_orders
+	WHERE extras IS NOT NULL
+	UNION ALL
+	SELECT TRIM(SUBSTRING_INDEX(extras, ',', -1))
+	FROM new_ctm_orders
+	WHERE extras IS NOT NULL AND extras LIKE '%,%'
+)
+
+SELECT pt.topping_name, COUNT(*) 
+FROM pizza_toppings pt
+JOIN cte ON pt.topping_id = cte.topping_id
+GROUP BY 1;
+
+
+--3) What was the most common exclusion?
+WITH cte
+AS(
+    SELECT SUBSTRING_INDEX(exclusions, ',', 1) topping_id
+	FROM new_ctm_orders
+	WHERE exclusions IS NOT NULL
+	UNION ALL
+	SELECT TRIM(SUBSTRING_INDEX(exclusions, ',', -1))
+	FROM new_ctm_orders
+	WHERE exclusions IS NOT NULL AND exclusions LIKE '%,%'
+)
+
+SELECT pt.topping_name, COUNT(*) 
+FROM pizza_toppings pt
+JOIN cte ON pt.topping_id = cte.topping_id
+GROUP BY 1
+ORDER BY 2 DESC;
+
+/* OR */
+WITH vw_exclusions 
+AS(
+    SELECT
+    CASE WHEN exclusions NOT LIKE '%,%' THEN exclusions
+    ELSE TRIM(substring_index(substring_index(a.exclusions,',',b.help_topic_id+1),',',-1))
+    END exclusions
+    FROM new_ctm_orders a 
+    JOIN mysql.help_topic b ON b.help_topic_id <= (length(a.exclusions) - length(replace(a.exclusions,',',''))+1))
+
+SELECT topping_name, COUNT(topping_id) topping_id_count
+FROM pizza_toppings pt
+JOIN vw_exclusions ON pt.topping_id = vw_exclusions.exclusions
+GROUP BY topping_name
+HAVING topping_id_count = (
+    SELECT MAX(x.topping_id_count)
+    FROM (SELECT topping_name, COUNT(topping_id) topping_id_count
+          FROM pizza_toppings pt
+          JOIN vw_exclusions ON pt.topping_id = vw_exclusions.exclusions
+          GROUP BY topping_name)x);
+
+
+--What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
+
+
+-- Generate an order item for each record in the customers_orders table in the format of one of the following:
+-- Meat Lovers
+-- Meat Lovers - Exclude Beef
+-- Meat Lovers - Extra Bacon
+-- Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
+
+
+
+
+-- Generate an alphabetically ordered comma separated ingredient list for
+-- each pizza order from the customer_orders table and add a 2x in front of 
+-- any relevant ingredients

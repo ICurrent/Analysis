@@ -133,3 +133,58 @@ GROUP BY 1;
 
 
 --Bonus Question
+
+--Bonus Question
+WITH cte AS(
+    SELECT s.customer_id, s.order_date, mu.product_name , mu.price,
+    CASE 
+        WHEN s.order_date>=m.join_date THEN 'y' ELSE 'n'
+        END AS membership
+    FROM sales s
+    LEFT JOIN members m ON s.customer_id=m.customer_id
+    INNER JOIN menu mu ON mu.product_id=s.product_id),
+
+cte1 AS(
+    SELECT *, dense_rank() OVER (PARTITION BY Customer_id ,membership ORDER BY order_date ASC) rankk
+    FROM cte 
+)
+SELECT *, 
+CASE 
+    WHEN membership='y' THEN rank ELSE NULL
+    END AS ranking 
+FROM cte1 
+
+
+/*BQ1*/
+SELECT s.customer_id, s.order_date, m.product_name, m.price,
+CASE 
+    WHEN mem.join_date > s.order_date THEN 'N'
+    WHEN mem.join_date <= s.order_date THEN 'Y'
+    ELSE 'N'
+    END AS valid_member
+FROM sales AS s LEFT JOIN menu AS m ON s.product_id = m.product_id 
+LEFT JOIN members AS mem
+ON s.customer_id = mem.customer_id;
+
+
+/*BQ2*/
+WITH overall_rank_cte AS(
+SELECT s.customer_id, s.order_date, m.product_name, m.price,
+CASE 
+    WHEN mem.join_date > s.order_date THEN 'N'
+    WHEN mem.join_date <= s.order_date THEN 'Y'
+    ELSE 'N'
+    END AS valid_member
+FROM sales AS s LEFT JOIN menu AS m ON s.product_id = m.product_id 
+LEFT JOIN members AS mem
+ON s.customer_id = mem.customer_id
+)
+
+SELECT *,
+CASE
+WHEN valid_member = 'N' THEN NULL
+ELSE
+RANK () OVER(PARTITION BY customer_id, valid_member
+ORDER BY order_date) 
+END AS member_ranking
+FROM overall_rank_cte;
